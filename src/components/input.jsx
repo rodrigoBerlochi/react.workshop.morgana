@@ -25,8 +25,5 @@ Input.defaultProps = {
     type: 'text'
 };
 
-Input.propTypes = {
-    reference: PropTypes.string.isRequired
-};
 
 export default Input;

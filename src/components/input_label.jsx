@@ -16,7 +16,7 @@ class Input_Label extends Component {
                 <div>
                     <Label type={this.props.labelStyle}>{this.props.label}</Label>
                     
-                    <Input reference={this.props.InputReference} onCreateNewItem={this.onCreateNewItem.bind(this)} 
+                    <Input ref={this.props.InputReference} reference={this.props.InputReference} onCreateNewItem={this.onCreateNewItem.bind(this)} 
                         placeholder={this.props.placeholder} type="text" 
                         name={this.props.name} styling={this.props.inputStyle}/>
                 </div>

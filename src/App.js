@@ -35,12 +35,12 @@ class App extends Component {
         this.onAddItem(item);
     }
     onAddItemByClick(item) {
-        var item = this.refs.inputLabel1.refs.input1.value;
+        var item = this.refs.inputLabel1.refs.input1.refs.input1.value;
         if(!item) {
             console.warn('Input is empty');
             return;
         }
-        this.refs.inputLabel1.refs.input1.value = '';
+        this.refs.inputLabel1.refs.input1.refs.input1.value = '';
         this.onAddItem(item);
     }
     render() {
@@ -58,8 +58,7 @@ class App extends Component {
           
           <InputLabel styling="" label="Morgana can define this label:"
             placeholder="Type something" name="catchSomeValue" inputStyle=""
-            onAddItemByEnter={this.onAddItemByEnter.bind(this)}
-            InputReference="input1" ref="inputLabel1"/>
+            onAddItemByEnter={this.onAddItemByEnter.bind(this)} ref="inputLabel1" InputReference="input1"/>
             
           <Button text="Start" onClickButton={this.onAddItemByClick.bind(this)}/>
           
