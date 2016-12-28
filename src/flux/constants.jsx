@@ -1,3 +1,5 @@
+'use strict';
+
 const actionIds = {
     ADD_ITEM: 'add_new_item',
     REMOVE_ITEM: 'delete_item',

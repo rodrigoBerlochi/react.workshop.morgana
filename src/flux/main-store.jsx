@@ -1,3 +1,5 @@
+'use strict';
+
 import AppDispatcher from './dispatcher.jsx';
 import CONSTANTS from './constants.jsx';
 import { ReduceStore } from 'flux/utils';

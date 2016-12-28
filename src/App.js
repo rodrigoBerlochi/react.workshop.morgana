@@ -1,3 +1,5 @@
+'use strict';
+
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
@@ -10,7 +12,8 @@ import UserActions from './flux/user-actions.jsx';
 import { Container } from 'flux/utils';
 
 //components
-//import ...
+import Button from './components/button.jsx';
+import InputLabel from './components/input_label.jsx';
 
 class App extends Component {
     constructor() {
@@ -25,6 +28,21 @@ class App extends Component {
     componentDidUpdate(oldProps, oldState) {
         
     }
+    onAddItem(item) {
+        UserActions.addItem(item);
+    }
+    onAddItemByEnter(item) {
+        this.onAddItem(item);
+    }
+    onAddItemByClick(item) {
+        var item = this.refs.inputLabel1.refs.input1.value;
+        if(!item) {
+            console.warn('Input is empty');
+            return;
+        }
+        this.refs.inputLabel1.refs.input1.value = '';
+        this.onAddItem(item);
+    }
     render() {
       return (
         <div className="App">
@@ -37,6 +55,14 @@ class App extends Component {
           <p className="App-intro">
             To get started, edit <code>src/App.js</code> and save to reload.
           </p>
+          
+          <InputLabel styling="" label="Morgana can define this label:"
+            placeholder="Type something" name="catchSomeValue" inputStyle=""
+            onAddItemByEnter={this.onAddItemByEnter.bind(this)}
+            InputReference="input1" ref="inputLabel1"/>
+            
+          <Button text="Start" onClickButton={this.onAddItemByClick.bind(this)}/>
+          
         </div>
       );
     }
