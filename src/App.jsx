@@ -14,6 +14,7 @@ import { Container } from 'flux/utils';
 //components
 import Button from './components/button.jsx';
 import InputLabel from './components/input_label.jsx';
+import List from './components/list.jsx';
 
 class App extends Component {
     constructor() {
@@ -62,6 +63,7 @@ class App extends Component {
             
           <Button text="Start" onClickButton={this.onAddItemByClick.bind(this)}/>
           
+          <List list={this.state.data}/>
         </div>
       );
     }

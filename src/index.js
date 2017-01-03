@@ -2,7 +2,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import AppContainer from './App';
+import AppContainer from './App.jsx';
 import './index.css';
 
 ReactDOM.render(
